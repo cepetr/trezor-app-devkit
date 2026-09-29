@@ -1,0 +1,14 @@
+[template]
+include = ["Cargo.toml", "flake.nix", ".cargo/config.toml", ".gitignore.liquid"]
+
+[placeholders.app_id]
+type = "string"
+prompt = "Application ID (e.g. my-app.example.com)"
+
+[placeholders.app_name]
+type = "string"
+prompt = "Application display name"
+
+[placeholders.app_vendor]
+type = "string"
+prompt = "Application vendor"

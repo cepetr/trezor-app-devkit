@@ -1,0 +1,8 @@
+{% if firmware_path %}
+[env]
+TREZOR_FIRMWARE = { value = "{{ firmware_path | replace: '\', '\\' | replace: '"', '\"' }}", force = true }
+
+[patch.crates-io]
+trezor-app-sdk = { path = "{{ firmware_path | replace: '\', '\\' | replace: '"', '\"' }}/sdk/crates/trezor-app-sdk" }
+trezor-app-build = { path = "{{ firmware_path | replace: '\', '\\' | replace: '"', '\"' }}/sdk/crates/trezor-app-build" }
+{% endif %}
