@@ -37,7 +37,7 @@ app-tool build --arch armv8m
 Or build for the emulator:
 
 ```sh
-app-tool build -e
+app-tool build --emulator
 ```
 
 ## Use a local firmware checkout
