@@ -34,7 +34,7 @@
 
         appCreate = pkgs.writeShellScriptBin "app-create" ''
           template=${self}/template
-          ${builtins.readFile ./app-create.sh}
+          ${builtins.readFile ./scripts/app-create.sh}
         '';
 
         # trezor-app-tool from crates.io, for apps generated without
@@ -54,8 +54,8 @@
         appTool = pkgs.writeShellScriptBin "app-tool" ''
           devkit=${self}
           system=${system}
-          trezor_firmware_resolver=${./firmware-path.py}
-          ${builtins.readFile ./app-tool.sh}
+          trezor_firmware_resolver=${./scripts/firmware-path.py}
+          ${builtins.readFile ./scripts/app-tool.sh}
         '';
 
         # Dev shell for generated apps (used by the template's flake.nix).
